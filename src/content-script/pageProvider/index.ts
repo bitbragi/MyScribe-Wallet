@@ -493,24 +493,29 @@ export class OpnetProvider extends EventEmitter {
 }
 
 const provider = new OpnetProvider();
-(window as WindowWithWallets).opnet = new Proxy(provider, {
-    deleteProperty: () => true
-}) as unknown as OPWallet;
+const providerProxy = new Proxy(provider, { deleteProperty: () => true });
 
-Object.defineProperty(window, 'opnet', {
-    value: new Proxy(provider, {
-        deleteProperty: () => true
-    }),
-    writable: false
-});
+try {
+    Object.defineProperty(window, 'opnet', {
+        value: providerProxy,
+        writable: false,
+        configurable: false,
+    });
+} catch {
+    // window.opnet already defined (e.g. by SES lockdown or another wallet) — skip
+}
 
-// Also expose as window.myscribe so the MyScribe walletconnect SDK can detect it
-Object.defineProperty(window, 'myscribe', {
-    value: new Proxy(provider, {
-        deleteProperty: () => true
-    }),
-    writable: false
-});
+// Always set window.myscribe so the MyScribe SDK can detect this wallet
+// regardless of whether window.opnet was claimable
+try {
+    Object.defineProperty(window, 'myscribe', {
+        value: providerProxy,
+        writable: false,
+        configurable: false,
+    });
+} catch {
+    // window.myscribe already defined — skip
+}
 
 window.dispatchEvent(new Event('opnet#initialized'));
 window.dispatchEvent(new Event('myscribe#initialized'));
