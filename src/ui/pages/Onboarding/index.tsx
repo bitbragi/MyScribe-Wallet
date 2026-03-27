@@ -7,17 +7,15 @@ import { RouteTypes, useNavigate } from '../routeTypes';
 import { OnboardingTOS } from './steps/OnboardingTOS';
 import { OnboardingExperience } from './steps/OnboardingExperience';
 import { OnboardingDisplay } from './steps/OnboardingDisplay';
-import { OnboardingUTXO } from './steps/OnboardingUTXO';
 import './onboarding.css';
 
 const STEP_VERSIONS: Record<string, string> = {
     tos: '4',
     experience: '2',
-    display: '2',
-    utxo: '2'
+    display: '2'
 };
 
-const STEP_ORDER: StepId[] = ['tos', 'experience', 'display', 'utxo'];
+const STEP_ORDER: StepId[] = ['tos', 'experience', 'display'];
 
 type StepId = keyof typeof STEP_VERSIONS;
 
@@ -131,15 +129,7 @@ export default function OnboardingScreen() {
                             />
                         )}
 
-                        {currentStep === 'utxo' && (
-                            <OnboardingUTXO
-                                wallet={wallet}
-                                onContinue={() => {
-                                    saveStepCompleted('utxo');
-                                    goNext();
-                                }}
-                            />
-                        )}
+                        {/* UTXO protection is always-on in MyScribe — no user choice needed */}
                     </div>
                 </div>
             </Content>

@@ -18,7 +18,7 @@ interface ParticleCanvasProps {
     size?: number; // base dot radius
 }
 
-const ParticleCanvas: React.FC<ParticleCanvasProps> = ({ count = 50, speed = 0.5, color = '#FE7901', size: baseSize = 1.1 }) => {
+const ParticleCanvas: React.FC<ParticleCanvasProps> = ({ count = 50, speed = 0.5, color = '#ffffff', size: baseSize = 1.1 }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const particles = useRef<Particle[]>([]);
     const timeRef = useRef<number>(0);

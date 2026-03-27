@@ -17,7 +17,7 @@ const colors = {
     text: '#dbdbdb',
     textFaded: 'rgba(219, 219, 219, 0.7)',
     containerBgFaded: '#122240',
-    containerBorder: '#2a4060',
+    containerBorder: '#3a5575',
     success: '#4ade80'
 };
 
@@ -31,12 +31,8 @@ const walletIcons: Record<number, React.ReactNode> = {
 };
 
 const walletDescriptions: Record<number, string> = {
-    [RestoreWalletType.OP_WALLET]: 'Restore from an existing OP_WALLET backup',
-    [RestoreWalletType.UNISAT]: 'Import using UniSat derivation path',
-    [RestoreWalletType.SPARROW]: 'Import using Sparrow derivation path',
-    [RestoreWalletType.XVERSE]: 'Import using Xverse derivation (12 words)',
-    [RestoreWalletType.LEATHER]: 'Import using Leather account derivation',
-    [RestoreWalletType.OTHERS]: 'Custom derivation path for other wallets'
+    [RestoreWalletType.OP_WALLET]: 'Restore from an existing OP_WALLET or MyScribe backup',
+    [RestoreWalletType.UNISAT]: 'Import using UniSat Taproot derivation path'
 };
 
 export function Step0({

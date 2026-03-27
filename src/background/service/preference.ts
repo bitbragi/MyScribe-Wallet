@@ -784,11 +784,13 @@ class PreferenceService {
     // ==================== UTXO PROTECTION ====================
 
     getUTXOProtectionDisabled = (): boolean => {
-        return this.store.utxoProtectionDisabled ?? false;
+        // MyScribe: UTXO protection is always enabled to protect Ordinals
+        return false;
     };
 
-    setUTXOProtectionDisabled = async (disabled: boolean): Promise<void> => {
-        this.store.utxoProtectionDisabled = disabled;
+    setUTXOProtectionDisabled = async (_disabled: boolean): Promise<void> => {
+        // MyScribe: UTXO protection cannot be disabled — always-on for Ordinal safety
+        this.store.utxoProtectionDisabled = false;
         await this.persist();
     };
 

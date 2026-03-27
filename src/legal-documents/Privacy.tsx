@@ -25,8 +25,29 @@ export function PrivacyPolicyText({ effectiveDate, styles }: PrivacyPolicyTextPr
 
     return (
         <>
+            {/* ── MyScribe Privacy Preamble ── */}
+            <div style={{ marginBottom: 18, padding: 14, border: '1.5px solid #3a5575', background: 'rgba(10,22,40,0.85)' }}>
+                <div style={{ ...styles.h2, fontSize: 15, marginTop: 0, marginBottom: 8 }}>MYSCRIBE WALLET PRIVACY NOTICE</div>
+                <p style={{ ...styles.baseText, marginBottom: 8 }}>
+                    MyScribe Wallet is a non-custodial browser extension. We do not operate servers that collect, store, or
+                    process Your personal data. MyScribe Wallet runs entirely on Your device.
+                </p>
+                <p style={{ ...styles.baseText, marginBottom: 8 }}>
+                    MyScribe Wallet makes network requests to public third-party APIs (mempool.space, ordinals.com, and
+                    OPNet nodes) solely to display blockchain data. These services have their own privacy policies. MyScribe
+                    does not act as an intermediary and does not log or relay Your data through any MyScribe-operated
+                    infrastructure.
+                </p>
+                <p style={{ ...styles.baseText, marginBottom: 0 }}>
+                    The OP_WALLET Privacy Policy below applies to the underlying software and any OPNet services You
+                    interact with through this wallet.
+                </p>
+            </div>
+
+            <hr style={styles.hr || {}} />
+
             <div style={{ marginBottom: 10 }}>
-                <div style={{ ...styles.h2, marginTop: 2 }}>PRIVACY POLICY</div>
+                <div style={{ ...styles.h2, marginTop: 2 }}>OP_WALLET PRIVACY POLICY</div>
                 <p style={{ ...styles.baseText, marginTop: 6, color: 'rgba(255,255,255,0.70)' }}>
                     Last Updated: {effectiveDate}
                 </p>

@@ -1,7 +1,6 @@
 {
   "externally_connectable": {
-    "matches": ["https://opnet.org/*"],
-    "ids": ["*"]
+    "matches": ["https://opnet.org/*", "https://myscribe.org/*", "https://*.myscribe.org/*"]
   },
   "minimum_chrome_version": "88"
 }

@@ -2077,6 +2077,10 @@ export class WalletController {
         }
     };
 
+    // TODO: Inscription sending will be added in a future release.
+    // Requires deeper integration with the keyring's Taproot signing to properly
+    // construct and sign PSBTs for inscription UTXO transfers.
+
     /**
      * Build, sign, and broadcast a BTC funding transaction using TransactionFactory.
      * Accepts IFundingTransactionParametersWithoutSigner — the wallet provides

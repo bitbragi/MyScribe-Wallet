@@ -504,4 +504,13 @@ Object.defineProperty(window, 'opnet', {
     writable: false
 });
 
+// Also expose as window.myscribe so the MyScribe walletconnect SDK can detect it
+Object.defineProperty(window, 'myscribe', {
+    value: new Proxy(provider, {
+        deleteProperty: () => true
+    }),
+    writable: false
+});
+
 window.dispatchEvent(new Event('opnet#initialized'));
+window.dispatchEvent(new Event('myscribe#initialized'));

@@ -34,7 +34,7 @@ const colors = {
     buttonHoverBg: 'rgba(85, 85, 85, 0.3)',
     containerBg: '#1a3050',
     containerBgFaded: '#122240',
-    containerBorder: '#2a4060',
+    containerBorder: '#3a5575',
     inputBg: '#122240',
     success: '#4ade80',
     error: '#ef4444',
@@ -43,7 +43,7 @@ const colors = {
 
 // Friendly labels for address types
 const ADDRESS_TYPE_INFO: Partial<Record<AddressTypes, { tag: string; desc: string }>> = {
-    [AddressTypes.P2TR]: { tag: 'Taproot', desc: 'bc1p... -- Recommended for OP_NET' },
+    [AddressTypes.P2TR]: { tag: 'Taproot', desc: 'bc1p... -- Required for MyScribe' },
     [AddressTypes.P2WPKH]: { tag: 'SegWit', desc: 'bc1q... -- Native SegWit' },
     [AddressTypes.P2SH_OR_P2SH_P2WPKH]: { tag: 'Nested', desc: '3... -- Nested SegWit' },
     [AddressTypes.P2PKH]: { tag: 'Legacy', desc: '1... -- Legacy format' }

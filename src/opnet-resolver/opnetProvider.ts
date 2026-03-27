@@ -255,7 +255,15 @@ Object.defineProperty(window, 'opnet', {
     configurable: false
 });
 
-// Dispatch initialization event
+// Also expose as window.myscribe for MyScribe walletconnect SDK
+Object.defineProperty(window, 'myscribe', {
+    value: provider,
+    writable: false,
+    configurable: false
+});
+
+// Dispatch initialization events
 window.dispatchEvent(new Event('opnet#initialized'));
+window.dispatchEvent(new Event('myscribe#initialized'));
 
 export { OpnetResolverProvider };

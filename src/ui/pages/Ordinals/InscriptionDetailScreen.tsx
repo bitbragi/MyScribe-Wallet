@@ -78,26 +78,25 @@ export default function InscriptionDetailScreen() {
                     <MetadataRow label="Value" value={`${inscription.value} sats`} />
                 </Column>
 
-                {/* Send button */}
+                {/* Send button — disabled until inscription transfer is implemented */}
                 <button
-                    onClick={() => navigate(RouteTypes.SendInscriptionScreen, inscription)}
+                    disabled
                     style={{
                         width: '100%',
                         marginTop: 20,
                         padding: '14px',
-                        backgroundImage:
-                            'linear-gradient(135deg, #f5e6b8, #e8c547, #c9a227, #f0dc8a, #a67c1a, #d4af37)',
-                        backgroundSize: '200% 200%',
-                        color: '#0A1628',
-                        border: 'none',
+                        background: colors.bg3,
+                        color: colors.white_muted,
+                        border: `1.5px solid ${colors.border}`,
                         borderRadius: 0,
                         fontSize: 14,
                         fontWeight: 700,
-                        cursor: 'pointer',
+                        cursor: 'not-allowed',
                         textTransform: 'uppercase',
-                        letterSpacing: '0.05em'
+                        letterSpacing: '0.05em',
+                        opacity: 0.6
                     }}>
-                    Send Inscription
+                    Send Inscription — Coming Soon
                 </button>
             </Content>
             <Footer>

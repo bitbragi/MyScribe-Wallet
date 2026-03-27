@@ -23,6 +23,53 @@ type TermsTextProps = {
 export function TermsText({ effectiveDate, styles }: TermsTextProps) {
     return (
         <>
+            {/* ── MyScribe Wallet Preamble ── */}
+            <div style={{ marginBottom: 18, padding: 14, border: '1.5px solid #3a5575', background: 'rgba(10,22,40,0.85)' }}>
+                <div style={{ ...styles.h2, fontSize: 15, marginTop: 0, marginBottom: 8 }}>MYSCRIBE WALLET NOTICE</div>
+                <p style={{ ...styles.baseText, marginBottom: 8 }}>
+                    MyScribe Wallet is an independent, open-source fork of OP_WALLET. MyScribe Wallet is provided entirely
+                    &quot;as is&quot; and &quot;as available,&quot; without warranty of any kind, express or implied. The
+                    MyScribe project, its contributors, and affiliates (&quot;MyScribe&quot;) shall not be held liable for
+                    any damages, losses, or claims arising from Your use of this software, including but not limited to loss
+                    of funds, data, or access to digital assets.
+                </p>
+                <p style={{ ...styles.baseText, marginBottom: 8 }}>
+                    <strong>What MyScribe changes from OP_WALLET:</strong> MyScribe applies a branded user interface,
+                    restores Ordinals inscription support (using the ordinals.com public API), and removes certain advanced
+                    developer-facing features. All underlying wallet functionality &mdash; key management, transaction
+                    signing, OPNet smart contract interaction &mdash; is inherited directly from OP_WALLET without
+                    modification.
+                </p>
+                <p style={{ ...styles.baseText, marginBottom: 8 }}>
+                    <strong>Non-custodial.</strong> You are solely responsible for safeguarding Your seed phrase, private
+                    keys, and passwords. MyScribe does not store, transmit, or have access to Your keys or funds. If You
+                    lose Your seed phrase, neither MyScribe nor anyone else can recover Your wallet.
+                </p>
+                <p style={{ ...styles.baseText, marginBottom: 8 }}>
+                    <strong>Use at Your own risk.</strong> You acknowledge that cryptocurrency and digital assets are
+                    volatile, experimental, and subject to regulatory uncertainty. You assume all risk associated with using
+                    this wallet, interacting with smart contracts, sending transactions, and holding digital assets.
+                </p>
+                <p style={{ ...styles.baseText, marginBottom: 8 }}>
+                    <strong>No financial advice.</strong> Nothing in this wallet or its documentation constitutes financial,
+                    investment, legal, or tax advice. Consult qualified professionals before making financial decisions.
+                </p>
+                <p style={{ ...styles.baseText, marginBottom: 0 }}>
+                    <strong>Limitation of liability.</strong> To the fullest extent permitted by applicable law, MyScribe
+                    disclaims all liability for any indirect, incidental, special, consequential, or punitive damages,
+                    including loss of profits, data, or digital assets, regardless of the cause of action or theory of
+                    liability, even if MyScribe has been advised of the possibility of such damages. In no event shall
+                    MyScribe&apos;s total aggregate liability exceed zero (0) USD.
+                </p>
+            </div>
+
+            <hr style={styles.hr} />
+
+            <p style={{ ...styles.baseText, fontStyle: 'italic', marginBottom: 12, color: 'rgba(255,255,255,0.55)' }}>
+                The following OP_WALLET Terms of Use apply to the underlying wallet software. By using MyScribe Wallet,
+                You agree to both the MyScribe notice above and the OP_WALLET terms below.
+            </p>
+
             <div style={{ marginBottom: 10 }}>
                 <div style={{ ...styles.h2, fontSize: 14, marginTop: 2 }}>OP_WALLET</div>
                 <div style={{ ...styles.h2, fontSize: 14, marginTop: 2 }}>TERMS OF USE</div>
