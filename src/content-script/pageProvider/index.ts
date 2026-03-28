@@ -495,18 +495,10 @@ export class OpnetProvider extends EventEmitter {
 const provider = new OpnetProvider();
 const providerProxy = new Proxy(provider, { deleteProperty: () => true });
 
-try {
-    Object.defineProperty(window, 'opnet', {
-        value: providerProxy,
-        writable: false,
-        configurable: false,
-    });
-} catch {
-    // window.opnet already defined (e.g. by SES lockdown or another wallet) — skip
-}
-
-// Always set window.myscribe so the MyScribe SDK can detect this wallet
-// regardless of whether window.opnet was claimable
+// Only register as window.myscribe — do NOT claim window.opnet.
+// window.opnet belongs to OP Wallet exclusively; if MyScribe claims it,
+// it intercepts connection requests intended for OP Wallet on any dApp
+// that uses the original @btc-vision/walletconnect SDK.
 try {
     Object.defineProperty(window, 'myscribe', {
         value: providerProxy,
@@ -517,5 +509,4 @@ try {
     // window.myscribe already defined — skip
 }
 
-window.dispatchEvent(new Event('opnet#initialized'));
 window.dispatchEvent(new Event('myscribe#initialized'));
