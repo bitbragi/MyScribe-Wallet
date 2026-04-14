@@ -155,7 +155,7 @@ export default function Connect({ params: { session } }: Props) {
             </Header>
             <Content>
                 <Column>
-                    <Text text="Connect with OP_Wallet" preset="title-bold" textCenter mt="lg" />
+                    <Text text="Connect with MyScribe Wallet" preset="title-bold" textCenter mt="lg" />
                     <Text text="Select the account to use on this site" textCenter mt="md" />
                     <Text text="Only connect with sites you trust." preset="sub" textCenter mt="md" />
 
