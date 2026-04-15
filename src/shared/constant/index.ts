@@ -316,7 +316,6 @@ export const DEFAULT_CHAINS_MAP: { [key in ChainType]?: TypeChain<key> } = {
         faucetUrl: '',
         okxExplorerUrl: '',
         isViewTxHistoryInternally: false,
-        disable: true,
         isFractal: true,
         showPrice: true,
         defaultExplorer: 'mempool-space',
