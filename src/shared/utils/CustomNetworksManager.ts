@@ -60,6 +60,10 @@ class CustomNetworksManager {
                 ].filter(Boolean) as ConcreteTypeChain[]
             },
             {
+                type: 'single',
+                chain: this.getChain(ChainType.FRACTAL_BITCOIN_MAINNET) as ConcreteTypeChain
+            },
+            {
                 type: 'list',
                 label: 'Dogecoin',
                 icon: CHAIN_ICONS[ChainId.Dogecoin],
