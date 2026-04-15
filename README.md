@@ -8,16 +8,16 @@
 
 > A wallet built for legends.
 
-**[Chrome Web Store](https://chromewebstore.google.com/detail/myscribe-wallet/nhfiknmlbleocledikacjgcfhelochpg)** &nbsp;|&nbsp; **[myscribe.org](https://myscribe.org)**
+**[Chrome Web Store](https://chromewebstore.google.com/detail/myscribe-wallet/fohjnnfmmfaiilnbnbokkfmdienjdfck)** &nbsp;|&nbsp; **[myscribe.org](https://myscribe.org)**
 
 ## What is MyScribe Wallet?
 
-MyScribe Wallet is an open-source, non-custodial Bitcoin browser extension built for consumers. It combines **OPNet smart contract** support with native **Ordinals inscription** browsing and **Fractal Bitcoin** network access, all wrapped in a clean, distinctive UI.
+MyScribe Wallet is an open-source, non-custodial Bitcoin browser extension built for consumers. It combines **OPNet smart contract** support with native **Ordinals inscription** browsing and **Fractal Bitcoin** support, all wrapped in a clean, distinctive UI.
 
 MyScribe Wallet is a community fork of [OP_WALLET](https://github.com/btc-vision/opwallet) that extends the OPNet ecosystem with:
 
 - **Ordinals support restored** — Inscriptions fetched via `ordinals.com` + `mempool.space` APIs. Inline preview rendering via `ordinals.com/preview/{id}`. No Hiro dependency.
-- **Fractal Bitcoin Mainnet** — First-class network support out of the box. Send, receive, and interact with OPNet on Fractal Bitcoin alongside Bitcoin Mainnet.
+- **Fractal Bitcoin Mainnet** — First-class network support out of the box. Send, receive, and inscribe large file types on Fractal Bitcoin's fast, low-fee chain.
 - **Consumer-focused UX** — Taproot-only wallet creation, always-on UTXO protection for Ordinals, simplified onboarding. Advanced developer features (contract deployment) removed for clarity.
 - **MyScribe branding** — Sharp corners, gold gradient accents, visible container borders, custom logo and iconography.
 - **OPNet WalletConnect integration** — Detects as `window.myscribe` for dApp connectivity via `@btc-vision/walletconnect`. [PR #23](https://github.com/btc-vision/walletconnect/pull/23) adds MyScribe to the official wallet connect modal.
@@ -29,7 +29,7 @@ MyScribe Wallet is a community fork of [OP_WALLET](https://github.com/btc-vision
 
 | Feature | MyScribe Wallet |
 |---|---|
-| **Bitcoin** | Taproot (BIP86), SegWit, Legacy |
+| **Bitcoin** | Taproot (BIP86) |
 | **Networks** | Bitcoin Mainnet, Fractal Bitcoin Mainnet, OPNet Testnet, Regtest |
 | **Ordinals** | Browse inscriptions via ordinals.com |
 | **OPNet** | OP20 tokens, MotoSwap, .btc domains, smart contract interaction |
@@ -46,7 +46,7 @@ MyScribe Wallet is a community fork of [OP_WALLET](https://github.com/btc-vision
 
 ### Chrome Web Store
 
-Install directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/myscribe-wallet/nhfiknmlbleocledikacjgcfhelochpg). Works on Chrome, Brave, Edge, and Opera.
+Install directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/myscribe-wallet/fohjnnfmmfaiilnbnbokkfmdienjdfck). Works on Chrome, Brave, Edge, and Opera.
 
 ### Manual Install
 
@@ -127,7 +127,7 @@ Upstream OP_WALLET updates are tracked via the GitHub fork relationship.
 
 ## Links
 
-- [Chrome Web Store](https://chromewebstore.google.com/detail/myscribe-wallet/nhfiknmlbleocledikacjgcfhelochpg)
+- [Chrome Web Store](https://chromewebstore.google.com/detail/myscribe-wallet/fohjnnfmmfaiilnbnbokkfmdienjdfck)
 - [MyScribe](https://myscribe.org)
 - [OPNet](https://opnet.org)
 - [OPNet Docs](https://docs.opnet.org)
