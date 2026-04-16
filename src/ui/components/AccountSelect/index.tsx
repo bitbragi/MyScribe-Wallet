@@ -27,7 +27,7 @@ const AccountSelect = ({ rightExtra }: AccountSelectProps) => {
     const address = currentAccount.address;
     const isSimpleMode = useSimpleModeEnabled();
 
-    const { avatarInscId } = useMyScribeProfile(currentAccount?.address);
+    const { avatarInscId } = useMyScribeProfile(currentAccount?.quantumPublicKeyHash);
     const [needsQuantumMigration, setNeedsQuantumMigration] = useState(false);
     const [pfpError, setPfpError] = useState(false);
 

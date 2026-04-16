@@ -20,6 +20,7 @@ import {
     UserOutlined
 } from '@ant-design/icons';
 
+import { useMyScribeProfile } from '@/ui/hooks/useMyScribeProfile';
 import { RouteTypes, useNavigate } from '../routeTypes';
 
 const colors = {
@@ -55,6 +56,7 @@ export function MyItem({ account, autoNav }: MyItemProps) {
     const [optionsVisible, setOptionsVisible] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const tools = useTools();
+    const { avatarInscId } = useMyScribeProfile(account?.quantumPublicKeyHash);
 
     if (!account) {
         return <div />;
@@ -133,12 +135,25 @@ export function MyItem({ account, autoNav }: MyItemProps) {
                             position: 'relative',
                             flexShrink: 0
                         }}>
-                        <UserOutlined
-                            style={{
-                                fontSize: 18,
-                                color: selected ? colors.background : colors.text
-                            }}
-                        />
+                        {avatarInscId ? (
+                            <img
+                                src={`https://ordinals.com/content/${avatarInscId}`}
+                                alt=""
+                                style={{
+                                    width: 40,
+                                    height: 40,
+                                    objectFit: 'cover',
+                                    borderRadius: 0
+                                }}
+                            />
+                        ) : (
+                            <UserOutlined
+                                style={{
+                                    fontSize: 18,
+                                    color: selected ? colors.background : colors.text
+                                }}
+                            />
+                        )}
                         {selected && (
                             <CheckCircleFilled
                                 style={{

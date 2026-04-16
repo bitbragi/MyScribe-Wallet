@@ -113,6 +113,8 @@ class MyScribeProfileServiceClass {
 
     private async fetchProfile(address: string, cacheKey: string): Promise<MyScribeProfile | null> {
         try {
+            console.log('[MyScribeProfile] Fetching profile for:', address);
+
             // Step 1: Check if user has a profile via Factory.resolveAddress()
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const factory: any = getContract(
@@ -123,6 +125,7 @@ class MyScribeProfileServiceClass {
             );
 
             const resolveResult = await factory.resolveAddress(address);
+            console.log('[MyScribeProfile] Factory resolveAddress result:', resolveResult);
             const profileAddress = resolveResult?.properties?.contractAddress;
 
             if (!profileAddress || profileAddress === 0n) {
@@ -146,6 +149,7 @@ class MyScribeProfileServiceClass {
             );
 
             const profileResult = await profileContract.getProfile();
+            console.log('[MyScribeProfile] Profile getProfile result:', profileResult);
             const props = profileResult?.properties;
 
             const profile: MyScribeProfile = {
