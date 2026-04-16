@@ -8,6 +8,7 @@ import { KEYRING_TYPE } from '@/shared/constant';
 import { AddressTypes } from '@btc-vision/transaction';
 import { useCurrentKeyring } from '@/ui/state/keyrings/hooks';
 import { useSimpleModeEnabled } from '@/ui/hooks/useExperienceMode';
+import { useMyScribeProfile } from '@/ui/hooks/useMyScribeProfile';
 import { useTools } from '../ActionComponent';
 import { Icon } from '../Icon';
 import './index.less';
@@ -26,7 +27,14 @@ const AccountSelect = ({ rightExtra }: AccountSelectProps) => {
     const address = currentAccount.address;
     const isSimpleMode = useSimpleModeEnabled();
 
+    const { avatarInscId } = useMyScribeProfile(currentAccount?.address);
     const [needsQuantumMigration, setNeedsQuantumMigration] = useState(false);
+    const [pfpError, setPfpError] = useState(false);
+
+    // Reset pfp error state when address changes
+    useEffect(() => {
+        setPfpError(false);
+    }, [currentAccount?.address]);
 
     // Check if quantum migration is needed
     useEffect(() => {
@@ -79,7 +87,22 @@ const AccountSelect = ({ rightExtra }: AccountSelectProps) => {
             }}>
             <div className="op_account_col_1">
                 <div className="op_account_icon_holder">
-                    <Icon icon="user" size={20} />
+                    {avatarInscId && !pfpError ? (
+                        <img
+                            src={`https://ordinals.com/content/${avatarInscId}`}
+                            alt=""
+                            style={{
+                                width: 28,
+                                height: 28,
+                                borderRadius: 0,
+                                objectFit: 'cover',
+                                border: '1px solid #3a5575'
+                            }}
+                            onError={() => setPfpError(true)}
+                        />
+                    ) : (
+                        <Icon icon="user" size={20} />
+                    )}
                 </div>
                 <div className="op_account_details">
                     <div className="op_account_name_row">
