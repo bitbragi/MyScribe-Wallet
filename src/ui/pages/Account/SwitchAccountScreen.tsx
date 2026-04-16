@@ -136,14 +136,18 @@ export function MyItem({ account, autoNav }: MyItemProps) {
                             flexShrink: 0
                         }}>
                         {avatarInscId ? (
-                            <img
-                                src={`https://ordinals.com/content/${avatarInscId}`}
-                                alt=""
+                            <iframe
+                                src={`https://ordinals.com/preview/${avatarInscId}`}
+                                title="pfp"
+                                sandbox="allow-scripts"
+                                scrolling="no"
                                 style={{
                                     width: 40,
                                     height: 40,
-                                    objectFit: 'cover',
-                                    borderRadius: 0
+                                    borderRadius: 0,
+                                    border: 'none',
+                                    overflow: 'hidden',
+                                    pointerEvents: 'none'
                                 }}
                             />
                         ) : (

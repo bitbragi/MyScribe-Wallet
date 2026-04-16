@@ -88,15 +88,18 @@ const AccountSelect = ({ rightExtra }: AccountSelectProps) => {
             <div className="op_account_col_1">
                 <div className="op_account_icon_holder">
                     {avatarInscId && !pfpError ? (
-                        <img
-                            src={`https://ordinals.com/content/${avatarInscId}`}
-                            alt=""
+                        <iframe
+                            src={`https://ordinals.com/preview/${avatarInscId}`}
+                            title="pfp"
+                            sandbox="allow-scripts"
+                            scrolling="no"
                             style={{
                                 width: 28,
                                 height: 28,
                                 borderRadius: 0,
-                                objectFit: 'cover',
-                                border: '1px solid #3a5575'
+                                border: '1px solid #3a5575',
+                                overflow: 'hidden',
+                                pointerEvents: 'none'
                             }}
                             onError={() => setPfpError(true)}
                         />

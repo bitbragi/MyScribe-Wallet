@@ -7,6 +7,7 @@
  * Flow: walletAddress → Factory.resolveAddress() → Profile.getProfile() → avatarInscId
  */
 import { getContract } from 'opnet';
+import { Address } from '@btc-vision/transaction';
 import Web3API from '@/shared/web3/Web3API';
 import {
     MYSCRIBE_FACTORY_ABI,
@@ -115,6 +116,10 @@ class MyScribeProfileServiceClass {
         try {
             console.log('[MyScribeProfile] Fetching profile for:', address);
 
+            // Wrap the hex hash in an Address object (OPNet contracts expect Address, not raw strings)
+            const addressHex = address.startsWith('0x') ? address : `0x${address}`;
+            const addressObj = Address.fromString(addressHex);
+
             // Step 1: Check if user has a profile via Factory.resolveAddress()
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const factory: any = getContract(
@@ -124,7 +129,7 @@ class MyScribeProfileServiceClass {
                 Web3API.network
             );
 
-            const resolveResult = await factory.resolveAddress(address);
+            const resolveResult = await factory.resolveAddress(addressObj);
             console.log('[MyScribeProfile] Factory resolveAddress result:', resolveResult);
             const profileAddress = resolveResult?.properties?.contractAddress;
 
