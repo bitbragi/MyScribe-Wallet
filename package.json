@@ -3,13 +3,13 @@
     "version": "1.1.0",
     "private": true,
     "type": "module",
-    "homepage": "https://github.com/bitbragi/MyScribe-Wallet#readme",
+    "homepage": "https://github.com/MyScribe-Ecosystem/MyScribe-Wallet#readme",
     "bugs": {
-        "url": "https://github.com/bitbragi/MyScribe-Wallet/issues"
+        "url": "https://github.com/MyScribe-Ecosystem/MyScribe-Wallet/issues"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/bitbragi/MyScribe-Wallet.git"
+        "url": "https://github.com/MyScribe-Ecosystem/MyScribe-Wallet.git"
     },
     "scripts": {
         "build:content": "vite build --config vite.config.content.ts",

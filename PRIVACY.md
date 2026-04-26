@@ -53,7 +53,7 @@ MyScribe Wallet is non-custodial. You are solely responsible for safeguarding yo
 ## Open Source
 
 MyScribe Wallet is open-source software. You can audit the complete source code at:
-https://github.com/bitbragi/MyScribe-Wallet
+https://github.com/MyScribe-Ecosystem/MyScribe-Wallet
 
 ## Changes to This Policy
 
@@ -62,4 +62,4 @@ If we update this privacy policy, the changes will be reflected in this document
 ## Contact
 
 For privacy-related questions, open an issue on our GitHub repository:
-https://github.com/bitbragi/MyScribe-Wallet/issues
+https://github.com/MyScribe-Ecosystem/MyScribe-Wallet/issues

@@ -79,18 +79,15 @@ Requires Node.js 24+.
 
 ## dApp Integration
 
-MyScribe Wallet injects `window.myscribe` on every page (does **not** conflict with `window.opnet` — OP_WALLET and MyScribe coexist cleanly). dApps using `@btc-vision/walletconnect` will show MyScribe in the wallet connect modal once [PR #23](https://github.com/btc-vision/walletconnect/pull/23) is merged.
+MyScribe Wallet injects `window.myscribe` on every page (does **not** conflict with `window.opnet` — OP_WALLET and MyScribe coexist cleanly).
 
-For dApp developers building with the MyScribe SDK fork today:
+dApps using `@btc-vision/walletconnect` will show MyScribe in their wallet connect modal once [walletconnect#23](https://github.com/btc-vision/walletconnect/pull/23) merges. End-to-end signing routing is unblocked by companion PRs [transaction#128](https://github.com/btc-vision/transaction/pull/128) and [opnet#158](https://github.com/btc-vision/opnet/pull/158) — all three verified bidirectionally on [testnet.myscribe.org](https://testnet.myscribe.org) with both wallets installed side-by-side.
 
-```bash
-npm install github:MyScribe-Ecosystem/myscribe-opnet-sdk
-```
+After merge, no extra installation is needed:
 
 ```tsx
-import { WalletConnectProvider, useWalletConnect, SupportedWallets } from '@myscribe/walletconnect';
+import { WalletConnectProvider } from '@btc-vision/walletconnect';
 
-// MyScribe appears alongside OP_WALLET in the connect modal
 <WalletConnectProvider theme="dark">
   <App />
 </WalletConnectProvider>
